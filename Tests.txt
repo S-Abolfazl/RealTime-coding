@@ -1,0 +1,85 @@
+1
+producer1.start();
+producer2.start();
+producer3.start();
+producer4.start();
+producer5.start();
+producer6.start();
+consumer1.start();
+consumer2.start();
+
+
+2
+consumer1.start();
+TimeUnit.SECONDS.sleep(10);
+producer1.start();
+
+
+3
+consumer1.start();
+consumer2.start();
+TimeUnit.SECONDS.sleep(10);
+producer1.start();
+TimeUnit.SECONDS.sleep(2);
+producer1.start();
+
+
+4
+consumer1.start();
+consumer2.start();
+consumer3.start();
+TimeUnit.SECONDS.sleep(15);
+producer1.start();
+TimeUnit.SECONDS.sleep(10);
+producer2.start();
+TimeUnit.SECONDS.sleep(10);
+producer3.start();
+
+
+5 for handling producing and consuming concurrently
+producer1.start();
+TimeUnit.SECONDS.sleep(1);
+producer2.start();
+TimeUnit.SECONDS.sleep(1);
+producer3.start();
+TimeUnit.SECONDS.sleep(1);
+System.out.println(concurrentQueue.stats());
+System.out.println("--------------------");
+TimeUnit.SECONDS.sleep(10);
+consumer1.start();
+producer4.start();
+consumer2.start();
+producer5.start();
+consumer3.start();
+producer6.start();
+
+
+6  for time to live
+TimeUnit.SECONDS.sleep(1);
+        producer1.start();
+        TimeUnit.SECONDS.sleep(1);
+        producer2.start();
+        TimeUnit.SECONDS.sleep(1);
+        producer3.start();
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println(concurrentQueue.stats());
+        System.out.println("--------------------");
+        TimeUnit.SECONDS.sleep(4);
+        System.out.println(concurrentQueue.stats());
+
+
+7 for time to live TTL testing
+producer1.start();
+            TimeUnit.SECONDS.sleep(1);
+            producer2.start();
+            TimeUnit.SECONDS.sleep(1);
+            producer3.start();
+            TimeUnit.SECONDS.sleep(1);
+            producer4.start();
+            TimeUnit.SECONDS.sleep(1);
+            producer5.start();
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println(concurrentQueue.stats());
+            System.out.println("--------------------");
+            TimeUnit.SECONDS.sleep(4);
+            System.out.println(concurrentQueue.stats());
